@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OgrenciTakipSistemi.DAL.Abstract
 {
-    public interface IRoleRepository : IBaseRepository<Role>
+    public interface IRolRepository : IBaseRepository<Rol>
     {
     }
 }

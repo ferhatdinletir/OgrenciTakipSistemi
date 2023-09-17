@@ -14,7 +14,7 @@ namespace OgrenciTakipSistemi.DAL.Contexts
         public DbSet<Ogrenci> Ogrenciler { get; set; }
         public DbSet<Danisman> Danismanlar { get; set;}
         public DbSet<Ders> Dersler { get; set; }
-        public DbSet<Role> Roller { get; set; }
+        public DbSet<Rol> Roller { get; set; }
 
         public SqlDbContext()
         {

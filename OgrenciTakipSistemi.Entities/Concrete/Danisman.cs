@@ -12,8 +12,8 @@ namespace OgrenciTakipSistemi.Entities.Concrete
         public string DanismanAdi { get; set; }
         public string DanismanSoyadi { get; set; }
         public bool Cinsiyet { get; set; }
-        public string? TcNO { get; set; }
-        public string? Gsm { get; set; }
+        public string TcNO { get; set; }
+        public string Gsm { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
     }

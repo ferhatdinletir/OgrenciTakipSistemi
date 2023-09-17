@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace OgrenciTakipSistemi.Entities.Concrete
 {
-    public class Role:BaseEntity
+    public class Rol:BaseEntity
     {
-        public string RoleName { get; set; }
+        public string RolAdi { get; set; }
 
     }
 }

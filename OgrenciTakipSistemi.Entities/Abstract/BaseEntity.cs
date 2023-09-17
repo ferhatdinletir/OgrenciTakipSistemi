@@ -9,6 +9,6 @@ namespace OgrenciTakipSistemi.Entities.Abstract
     public abstract class BaseEntity
     {
         public int Id { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public DateTime CreateDate { get; set; } = DateTime.Now;
     }
 }
