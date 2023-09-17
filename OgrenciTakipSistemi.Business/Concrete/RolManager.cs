@@ -16,7 +16,7 @@ namespace OgrenciTakipSistemi.Business.Concrete
 
         public RolManager(IBaseRepository<Rol> repository) : base(repository)
         {
-            //this.repository = repositoryq
+            //this.repository = repository
         }
     }
 }
