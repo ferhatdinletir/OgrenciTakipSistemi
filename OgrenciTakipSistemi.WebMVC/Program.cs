@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Identity;
+using OgrenciTakipSistemi.DAL.Contexts;
+using OgrenciTakipSistemi.Entities.Identities;
+
 namespace OgrenciTakipSistemi.WebMVC
 {
     public class Program
@@ -27,6 +31,8 @@ namespace OgrenciTakipSistemi.WebMVC
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+
+            builder.Services.AddIdentity<MyUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<SqlDbContext>();
         }
     }
 }
