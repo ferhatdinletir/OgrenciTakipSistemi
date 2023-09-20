@@ -9,6 +9,7 @@ namespace OgrenciTakipSistemi.WebMVC
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+           // var connectionString = builder.Configuration.GetConnectionString("Ogrenci Takip Sistemi");
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
