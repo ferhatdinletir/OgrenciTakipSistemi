@@ -27,6 +27,7 @@ namespace OgrenciTakipSistemi.DAL.EntityConfig.Concrete
             builder.HasIndex(p => p.TcNO).IsUnique();
             builder.HasIndex(p => p.Gsm).IsUnique();
             builder.HasIndex(p => p.Email).IsUnique();
+            builder.HasIndex(p => p.Password).IsUnique();
         }
 
     }

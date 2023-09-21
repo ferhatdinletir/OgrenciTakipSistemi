@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OgrenciTakipSistemi.Business.Abstract
+namespace OgrenciTakipSistemi.DAL.Abstract
 {
-    public interface IRoleManager : IBaseManager<Rol>
+    public interface IBolumRepository:IBaseRepository<Bolum>
     {
     }
 }

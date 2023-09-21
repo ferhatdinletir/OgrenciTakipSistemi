@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace OgrenciTakipSistemi.Entities.Concrete
 {
-    public class Rol:BaseEntity
+    public class DersSinavProgrami:BaseEntity
     {
-        public string RolAdi { get; set; }
+        public DateTime SinavTarihi { get; set; }
+        public ICollection<Ders> Dersler { get; set; }
+        public ICollection<Danisman> Danismanlar { get; set; }
 
     }
 }

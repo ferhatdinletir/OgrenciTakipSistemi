@@ -17,5 +17,8 @@ namespace OgrenciTakipSistemi.Entities.Concrete
         public string? Gsm { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+
+        //public ICollection<Danisman> Danismanlar { get; set; }
+
     }
 }

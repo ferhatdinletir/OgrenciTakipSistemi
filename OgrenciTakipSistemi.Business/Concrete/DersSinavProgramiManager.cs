@@ -1,6 +1,5 @@
 ﻿using OgrenciTakipSistemi.Business.Abstract;
 using OgrenciTakipSistemi.DAL.Abstract;
-using OgrenciTakipSistemi.DAL.Concrete;
 using OgrenciTakipSistemi.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,13 +9,11 @@ using System.Threading.Tasks;
 
 namespace OgrenciTakipSistemi.Business.Concrete
 {
-    public class RolManager : BaseManager<Rol>, IRoleManager
+    public class DersSinavProgramiManager : BaseManager<DersSinavProgrami>, IDersSinavProgramiManager
     {
-        //private readonly IRolRepository repository;
-
-        public RolManager(IBaseRepository<Rol> repository) : base(repository)
+        public DersSinavProgramiManager(IBaseRepository<DersSinavProgrami> repository) : base(repository)
         {
-            //this.repository = repository
         }
     }
 }
+    

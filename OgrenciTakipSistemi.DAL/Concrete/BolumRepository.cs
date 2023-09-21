@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OgrenciTakipSistemi.DAL.Concrete
 {
-    public class RolRepository :BaseRepository<Rol>,IRolRepository
+    public class BolumRepository : BaseRepository<Bolum>, IBolumRepository
     {
     }
 }
