@@ -4,7 +4,7 @@ using OgrenciTakipSistemi.DAL.Abstract;
 using OgrenciTakipSistemi.DAL.Concrete;
 using NuGet.Protocol.Plugins;
 
-namespace MyDukkan.WebUI.Extensions
+namespace OgrenciTakipSistemi.WebUI.Extensions
 {
     public static class AddOgrenciTakipSistemiService
     {
@@ -29,9 +29,14 @@ namespace MyDukkan.WebUI.Extensions
             return services;
         }
 
-        public static string TurkceKarakterDuzelt(this string str, string v)
+        public static string TurkceKarakterDuzelt(this string str)
         {
-            str = str.Replace('ş', 's');
+            List<char> listTR = new() { 'ı', 'İ', 'ğ', 'Ğ', 'ü', 'Ü', 'ş', 'Ş', 'ö', 'Ö', 'ç', 'Ç' };
+            List<char> listEN = new() { 'i', 'I', 'g', 'G', 'u', 'U', 's', 'S', 'o', 'O', 'c', 'C' };
+            for (int i = 0; i < listTR.Count; i++)
+            {
+                str = str.Replace(listTR[i], listEN[i]);
+            }
             return str;
         }
     }

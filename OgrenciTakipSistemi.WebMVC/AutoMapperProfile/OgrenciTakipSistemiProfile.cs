@@ -1,12 +1,17 @@
-﻿namespace OgrenciTakipSistemi.WebMVC.AutoMapperProfile
+﻿using AutoMapper;
+using OgrenciTakipSistemi.Entities.Authentication;
+using OgrenciTakipSistemi.Entities.Concrete;
+using OgrenciTakipSistemi.WebMVC.Areas.AdminArea.Models.DTOs;
+
+namespace OgrenciTakipSistemi.WebMVC.AutoMapperProfile
 {
-    public class OgrenciTakipSistemiProfile
+    public class OgrenciTakipSistemiProfile:Profile
     {
-        public OgrenciTakipSistemiProfile()
-        {
-            //CreateMap<ProductCreateDTO, Product>();
-            //CreateMap<CategoryCreateDTO, Category>();
-            //CreateMap<UserCreateDTO, User>();
-        }
+        //public OgrenciTakipSistemiProfile()
+        //{
+        //    CreateMap<ProductCreateDTO, Danisman>();
+        //    CreateMap<CategoryCreateDTO, Ogrenci>();
+        //    CreateMap<UserCreateDTO, AppUser>();
+        //}
     }
 }
