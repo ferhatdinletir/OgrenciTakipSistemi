@@ -39,7 +39,7 @@ namespace OgrenciTakipSistemi.WebMVC
                 .AddDefaultTokenProviders();
             #endregion
 
-            builder.Services.AddOgrenciTakipSistemiService();
+            //builder.Services.AddOgrenciTakipSistemi();
 
             #region AutoMapper
             builder.Services.AddAutoMapper(typeof(OgrenciTakipSistemiProfile));

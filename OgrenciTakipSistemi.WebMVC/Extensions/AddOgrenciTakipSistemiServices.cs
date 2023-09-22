@@ -6,7 +6,7 @@ using NuGet.Protocol.Plugins;
 
 namespace OgrenciTakipSistemi.WebUI.Extensions
 {
-    public static class AddOgrenciTakipSistemiService
+    public static class AddOgrenciTakipSistemiServices
     {
 
         public static IServiceCollection OgrenciTakipSistemiService(this IServiceCollection services)
@@ -17,13 +17,6 @@ namespace OgrenciTakipSistemi.WebUI.Extensions
 
             services.AddScoped<IOgrenciManager, OgrenciManager>();
             services.AddScoped<IOgrenciRepository, OgrenciRepository>();
-
-            services.AddScoped<IBolumManager, BolumManager>();
-            services.AddScoped<IBolumRepository, BolumRepository>();
-
-
-            services.AddScoped<IBransManager, BransManager>();
-            services.AddScoped<IBransRepository, BransRepository>();
 
 
             return services;

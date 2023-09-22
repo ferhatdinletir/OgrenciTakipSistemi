@@ -16,6 +16,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -30,6 +31,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    TcNO = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -51,62 +53,44 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Bolumler",
+                name: "Danismanlar",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    BolumId = table.Column<int>(type: "int", maxLength: 50, nullable: false),
-                    BolumAdi = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 13, 4, 21, 870, DateTimeKind.Local).AddTicks(7445))
+                    DanismanAdi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    DanismanSoyadi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Cinsiyet = table.Column<bool>(type: "bit", nullable: false),
+                    TcNO = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
+                    Gsm = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 22, 54, 4, 441, DateTimeKind.Local).AddTicks(3097))
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Bolumler", x => x.Id);
+                    table.PrimaryKey("PK_Danismanlar", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Branslar",
+                name: "Ogrenciler",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    BransId = table.Column<int>(type: "int", maxLength: 50, nullable: false),
-                    BransAdi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 13, 4, 21, 871, DateTimeKind.Local).AddTicks(770))
+                    OgrenciAdi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    OgrenciSoyadi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    DogumTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Cinsiyet = table.Column<bool>(type: "bit", nullable: false),
+                    TcNO = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true),
+                    Gsm = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 22, 54, 4, 441, DateTimeKind.Local).AddTicks(6678))
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Branslar", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DersSinavProgramlari",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SinavTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 13, 4, 21, 872, DateTimeKind.Local).AddTicks(4039))
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DersSinavProgramlari", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Devamsizliklar",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DevamsizlikTarihi = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DevamsizlikSayisi = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 13, 4, 21, 872, DateTimeKind.Local).AddTicks(6129))
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Devamsizliklar", x => x.Id);
+                    table.PrimaryKey("PK_Ogrenciler", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -216,130 +200,27 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Dersler",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DersAdi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    DersAciklama = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    DersSinavProgramiId = table.Column<int>(type: "int", nullable: true),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 13, 4, 21, 871, DateTimeKind.Local).AddTicks(8492))
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Dersler", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Dersler_DersSinavProgramlari_DersSinavProgramiId",
-                        column: x => x.DersSinavProgramiId,
-                        principalTable: "DersSinavProgramlari",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Danismanlar",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DanismanAdi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    DanismanSoyadi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Cinsiyet = table.Column<bool>(type: "bit", nullable: false),
-                    TcNO = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
-                    Gsm = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DevamsizlikId = table.Column<int>(type: "int", nullable: true),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 13, 4, 21, 871, DateTimeKind.Local).AddTicks(4021))
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Danismanlar", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Danismanlar_Devamsizliklar_DevamsizlikId",
-                        column: x => x.DevamsizlikId,
-                        principalTable: "Devamsizliklar",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DersNotlar",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    derslerId = table.Column<int>(type: "int", nullable: false),
-                    DersId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Vize = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    Final = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 13, 4, 21, 872, DateTimeKind.Local).AddTicks(1587))
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DersNotlar", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_DersNotlar_Dersler_derslerId",
-                        column: x => x.derslerId,
-                        principalTable: "Dersler",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DanismanDersSinavProgrami",
+                name: "DanismanOgrenci",
                 columns: table => new
                 {
                     DanismanlarId = table.Column<int>(type: "int", nullable: false),
-                    DersSinavProgramlariId = table.Column<int>(type: "int", nullable: false)
+                    OgrencilerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DanismanDersSinavProgrami", x => new { x.DanismanlarId, x.DersSinavProgramlariId });
+                    table.PrimaryKey("PK_DanismanOgrenci", x => new { x.DanismanlarId, x.OgrencilerId });
                     table.ForeignKey(
-                        name: "FK_DanismanDersSinavProgrami_Danismanlar_DanismanlarId",
+                        name: "FK_DanismanOgrenci_Danismanlar_DanismanlarId",
                         column: x => x.DanismanlarId,
                         principalTable: "Danismanlar",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_DanismanDersSinavProgrami_DersSinavProgramlari_DersSinavProgramlariId",
-                        column: x => x.DersSinavProgramlariId,
-                        principalTable: "DersSinavProgramlari",
+                        name: "FK_DanismanOgrenci_Ogrenciler_OgrencilerId",
+                        column: x => x.OgrencilerId,
+                        principalTable: "Ogrenciler",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Ogrenciler",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    OgrenciAdi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    OgrenciSoyadi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    DogumTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Cinsiyet = table.Column<bool>(type: "bit", nullable: false),
-                    TcNO = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true),
-                    Gsm = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    DanismanId = table.Column<int>(type: "int", nullable: true),
-                    DevamsizlikId = table.Column<int>(type: "int", nullable: true),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 13, 4, 21, 872, DateTimeKind.Local).AddTicks(8780))
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Ogrenciler", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Ogrenciler_Danismanlar_DanismanId",
-                        column: x => x.DanismanId,
-                        principalTable: "Danismanlar",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Ogrenciler_Devamsizliklar_DevamsizlikId",
-                        column: x => x.DevamsizlikId,
-                        principalTable: "Devamsizliklar",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -382,40 +263,6 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bolumler_BolumAdi",
-                table: "Bolumler",
-                column: "BolumAdi",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Bolumler_BolumId",
-                table: "Bolumler",
-                column: "BolumId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Branslar_BransAdi",
-                table: "Branslar",
-                column: "BransAdi",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Branslar_BransId",
-                table: "Branslar",
-                column: "BransId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DanismanDersSinavProgrami_DersSinavProgramlariId",
-                table: "DanismanDersSinavProgrami",
-                column: "DersSinavProgramlariId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Danismanlar_DevamsizlikId",
-                table: "Danismanlar",
-                column: "DevamsizlikId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Danismanlar_Email",
                 table: "Danismanlar",
                 column: "Email",
@@ -434,30 +281,9 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Dersler_DersAdi",
-                table: "Dersler",
-                column: "DersAdi",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Dersler_DersSinavProgramiId",
-                table: "Dersler",
-                column: "DersSinavProgramiId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DersNotlar_derslerId",
-                table: "DersNotlar",
-                column: "derslerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Ogrenciler_DanismanId",
-                table: "Ogrenciler",
-                column: "DanismanId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Ogrenciler_DevamsizlikId",
-                table: "Ogrenciler",
-                column: "DevamsizlikId");
+                name: "IX_DanismanOgrenci_OgrencilerId",
+                table: "DanismanOgrenci",
+                column: "OgrencilerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ogrenciler_Email",
@@ -505,19 +331,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Bolumler");
-
-            migrationBuilder.DropTable(
-                name: "Branslar");
-
-            migrationBuilder.DropTable(
-                name: "DanismanDersSinavProgrami");
-
-            migrationBuilder.DropTable(
-                name: "DersNotlar");
-
-            migrationBuilder.DropTable(
-                name: "Ogrenciler");
+                name: "DanismanOgrenci");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -526,16 +340,10 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Dersler");
-
-            migrationBuilder.DropTable(
                 name: "Danismanlar");
 
             migrationBuilder.DropTable(
-                name: "DersSinavProgramlari");
-
-            migrationBuilder.DropTable(
-                name: "Devamsizliklar");
+                name: "Ogrenciler");
         }
     }
 }
