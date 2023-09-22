@@ -21,7 +21,7 @@ namespace OgrenciTakipSistemi.DAL.Contexts
         public DbSet<Brans> Branslar { get; set; }
         public DbSet<DersSinavProgrami> DersSinavProgramlari { get; set; }
         public DbSet<Devamsizlik> Devamsizliklar { get; set; }
-        public DbSet<DersNot> Dersnotlar { get; set; }
+        public DbSet<DersNot> DersNotlar { get; set; }
 
         public SqlDbContext()
         {

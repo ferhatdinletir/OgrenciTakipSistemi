@@ -12,7 +12,7 @@ using OgrenciTakipSistemi.DAL.Contexts;
 namespace OgrenciTakipSistemi.DAL.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20230921102719_OgrenciTakipSistemi")]
+    [Migration("20230922100421_OgrenciTakipSistemi")]
     partial class OgrenciTakipSistemi
     {
         /// <inheritdoc />
@@ -192,7 +192,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 9, 21, 13, 27, 19, 70, DateTimeKind.Local).AddTicks(6666));
+                        .HasDefaultValue(new DateTime(2023, 9, 22, 13, 4, 21, 870, DateTimeKind.Local).AddTicks(7445));
 
                     b.HasKey("Id");
 
@@ -225,7 +225,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 9, 21, 13, 27, 19, 70, DateTimeKind.Local).AddTicks(9637));
+                        .HasDefaultValue(new DateTime(2023, 9, 22, 13, 4, 21, 871, DateTimeKind.Local).AddTicks(770));
 
                     b.HasKey("Id");
 
@@ -252,7 +252,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 9, 21, 13, 27, 19, 71, DateTimeKind.Local).AddTicks(2494));
+                        .HasDefaultValue(new DateTime(2023, 9, 22, 13, 4, 21, 871, DateTimeKind.Local).AddTicks(4021));
 
                     b.Property<string>("DanismanAdi")
                         .IsRequired()
@@ -313,7 +313,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 9, 21, 13, 27, 19, 71, DateTimeKind.Local).AddTicks(6340));
+                        .HasDefaultValue(new DateTime(2023, 9, 22, 13, 4, 21, 871, DateTimeKind.Local).AddTicks(8492));
 
                     b.Property<string>("DersAciklama")
                         .IsRequired()
@@ -338,6 +338,40 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     b.ToTable("Dersler");
                 });
 
+            modelBuilder.Entity("OgrenciTakipSistemi.Entities.Concrete.DersNot", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2023, 9, 22, 13, 4, 21, 872, DateTimeKind.Local).AddTicks(1587));
+
+                    b.Property<string>("DersId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Final")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("Vize")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("derslerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("derslerId");
+
+                    b.ToTable("DersNotlar");
+                });
+
             modelBuilder.Entity("OgrenciTakipSistemi.Entities.Concrete.DersSinavProgrami", b =>
                 {
                     b.Property<int>("Id")
@@ -349,7 +383,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 9, 21, 13, 27, 19, 71, DateTimeKind.Local).AddTicks(9165));
+                        .HasDefaultValue(new DateTime(2023, 9, 22, 13, 4, 21, 872, DateTimeKind.Local).AddTicks(4039));
 
                     b.Property<DateTime>("SinavTarihi")
                         .HasColumnType("datetime2");
@@ -370,7 +404,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 9, 21, 13, 27, 19, 72, DateTimeKind.Local).AddTicks(1228));
+                        .HasDefaultValue(new DateTime(2023, 9, 22, 13, 4, 21, 872, DateTimeKind.Local).AddTicks(6129));
 
                     b.Property<string>("DevamsizlikSayisi")
                         .HasColumnType("nvarchar(max)");
@@ -397,7 +431,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 9, 21, 13, 27, 19, 72, DateTimeKind.Local).AddTicks(3530));
+                        .HasDefaultValue(new DateTime(2023, 9, 22, 13, 4, 21, 872, DateTimeKind.Local).AddTicks(8780));
 
                     b.Property<int?>("DanismanId")
                         .HasColumnType("int");
@@ -601,6 +635,17 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     b.HasOne("OgrenciTakipSistemi.Entities.Concrete.DersSinavProgrami", null)
                         .WithMany("Dersler")
                         .HasForeignKey("DersSinavProgramiId");
+                });
+
+            modelBuilder.Entity("OgrenciTakipSistemi.Entities.Concrete.DersNot", b =>
+                {
+                    b.HasOne("OgrenciTakipSistemi.Entities.Concrete.Ders", "dersler")
+                        .WithMany()
+                        .HasForeignKey("derslerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("dersler");
                 });
 
             modelBuilder.Entity("OgrenciTakipSistemi.Entities.Concrete.Ogrenci", b =>
