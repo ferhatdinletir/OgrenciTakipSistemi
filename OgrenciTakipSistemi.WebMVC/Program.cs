@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using OgrenciTakipSistemi.DAL.Contexts;
-using OgrenciTakipSistemi.Entities.Identities;
+using OgrenciTakipSistemi.Entities.Authentication;
 
 namespace OgrenciTakipSistemi.WebMVC
 {
@@ -33,7 +33,7 @@ namespace OgrenciTakipSistemi.WebMVC
 
             app.Run();
 
-            builder.Services.AddIdentity<MyUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<SqlDbContext>();
+            app.UseAuthentication();
 
             #region AdminArea Controller Route
             app.UseEndpoints(endpoints =>

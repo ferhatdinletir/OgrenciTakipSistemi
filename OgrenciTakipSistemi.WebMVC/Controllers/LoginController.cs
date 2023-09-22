@@ -2,7 +2,7 @@
 
 namespace OgrenciTakipSistemi.WebMVC.Controllers
 {
-    public class KullaniciGirisController : Controller
+    public class LoginController : Controller
     {
         public IActionResult Index()
         {

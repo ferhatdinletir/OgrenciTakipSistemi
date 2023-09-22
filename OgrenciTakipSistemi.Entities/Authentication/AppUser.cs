@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OgrenciTakipSistemi.Entities.Identities
+namespace OgrenciTakipSistemi.Entities.Authentication
 {
-    public class MyUser : IdentityUser
+    public class AppUser:IdentityUser
     {
-
+        public string? TcNO { get; set; }
     }
 }
