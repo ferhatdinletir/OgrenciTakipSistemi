@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using OgrenciTakipSistemi.DAL.Contexts;
 using OgrenciTakipSistemi.Entities.Authentication;
+using OgrenciTakipSistemi.WebMVC.AutoMapperProfile;
+using OgrenciTakipSistemi.WebUI.Extensions;
 
 namespace OgrenciTakipSistemi.WebMVC
 {
@@ -13,6 +16,34 @@ namespace OgrenciTakipSistemi.WebMVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<SqlDbContext>(
+                options => options.UseSqlServer(builder.Configuration.GetConnectionString("OgrenciTakipSistemi")));
+
+            #region Identity Configuration
+            builder.Services.AddIdentity<AppUser, AppRole>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequiredLength = 3;
+
+                options.User.RequireUniqueEmail = true;
+
+                options.SignIn.RequireConfirmedPhoneNumber = false;
+                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedPhoneNumber = false;
+                options.SignIn.RequireConfirmedAccount = false;
+            }).AddEntityFrameworkStores<SqlDbContext>()
+                .AddDefaultTokenProviders();
+            #endregion
+
+            builder.Services.AddOgrenciTakipSistemiService();
+
+            #region AutoMapper
+            builder.Services.AddAutoMapper(typeof(OgrenciTakipSistemiProfile));
+            #endregion
 
             var app = builder.Build();
 
@@ -27,12 +58,6 @@ namespace OgrenciTakipSistemi.WebMVC
 
             app.UseAuthorization();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-
-            app.Run();
-
             app.UseAuthentication();
 
             #region AdminArea Controller Route
@@ -44,6 +69,14 @@ namespace OgrenciTakipSistemi.WebMVC
                 );
             });
             #endregion
+
+            #region Map Controller Route
+            app.MapControllerRoute(
+                   name: "default",
+                   pattern: "{controller=Home}/{action=Index}/{id?}");
+            #endregion
+
+            app.Run();
         }
     }
 }

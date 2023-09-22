@@ -9,7 +9,7 @@ namespace OgrenciTakipSistemi.WebUI.Extensions
     public static class AddOgrenciTakipSistemiService
     {
 
-        public static IServiceCollection AddMyDukkanServices (this IServiceCollection services)
+        public static IServiceCollection OgrenciTakipSistemiService(this IServiceCollection services)
         {
             services.AddScoped<IDanismanManager, DanismanManager>();
             services.AddScoped<IDanismanRepository, DanismanRepository>();

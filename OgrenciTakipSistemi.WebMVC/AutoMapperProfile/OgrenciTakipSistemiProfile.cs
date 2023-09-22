@@ -7,11 +7,11 @@ namespace OgrenciTakipSistemi.WebMVC.AutoMapperProfile
 {
     public class OgrenciTakipSistemiProfile:Profile
     {
-        //public OgrenciTakipSistemiProfile()
-        //{
-        //    CreateMap<ProductCreateDTO, Danisman>();
-        //    CreateMap<CategoryCreateDTO, Ogrenci>();
-        //    CreateMap<UserCreateDTO, AppUser>();
-        //}
+        public OgrenciTakipSistemiProfile()
+        {
+            CreateMap<LoginDTO, Danisman>();
+        }
+
+
     }
 }

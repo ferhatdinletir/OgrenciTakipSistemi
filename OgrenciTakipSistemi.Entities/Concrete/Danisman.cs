@@ -16,6 +16,8 @@ namespace OgrenciTakipSistemi.Entities.Concrete
         public string Gsm { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Brans { get; set; }
+        public string DersNotlar { get; set; }
 
         public ICollection<Ogrenci> Ogrenciler { get; set; }
         public ICollection<DersSinavProgrami> DersSinavProgramlari {  get; set; }

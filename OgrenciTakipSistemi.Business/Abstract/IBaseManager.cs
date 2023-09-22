@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace OgrenciTakipSistemi.Business.Abstract
 {
     public interface IBaseManager<T> where T : BaseEntity
+
     {
         Task<int> InsertAsync(T entity);
         Task<int> UpdateAsync(T entity);

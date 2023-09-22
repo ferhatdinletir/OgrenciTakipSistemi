@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace OgrenciTakipSistemi.Entities.Concrete
 {
-    public class Brans:BaseEntity
-    {
-        public int BransId { get; set; }
-        public string BransAdi { get; set;}
-
+    public class Menu : BaseEntity
+    { 
     }
 }

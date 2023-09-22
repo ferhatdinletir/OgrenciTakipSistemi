@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OgrenciTakipSistemi.DAL.Abstract
 {
-    public interface IOgrenciRepository:IBaseRepository<Ogrenci>
+    public interface IOgrenciRepository : IBaseRepository<Ogrenci>
     {
     }
 }
