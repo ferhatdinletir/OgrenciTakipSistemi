@@ -34,6 +34,16 @@ namespace OgrenciTakipSistemi.WebMVC
             app.Run();
 
             builder.Services.AddIdentity<MyUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<SqlDbContext>();
+
+            #region AdminArea Controller Route
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+            });
+            #endregion
         }
     }
 }
