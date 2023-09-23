@@ -65,7 +65,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     Gsm = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 22, 54, 4, 441, DateTimeKind.Local).AddTicks(3097))
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 23, 19, 24, 9, 314, DateTimeKind.Local).AddTicks(8133))
                 },
                 constraints: table =>
                 {
@@ -86,7 +86,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     Gsm = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 22, 22, 54, 4, 441, DateTimeKind.Local).AddTicks(6678))
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 9, 23, 19, 24, 9, 315, DateTimeKind.Local).AddTicks(1650))
                 },
                 constraints: table =>
                 {

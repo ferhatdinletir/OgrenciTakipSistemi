@@ -255,7 +255,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 9, 22, 22, 54, 4, 441, DateTimeKind.Local).AddTicks(3097));
+                        .HasDefaultValue(new DateTime(2023, 9, 23, 19, 24, 9, 314, DateTimeKind.Local).AddTicks(8133));
 
                     b.Property<string>("DanismanAdi")
                         .IsRequired()
@@ -314,7 +314,7 @@ namespace OgrenciTakipSistemi.DAL.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 9, 22, 22, 54, 4, 441, DateTimeKind.Local).AddTicks(6678));
+                        .HasDefaultValue(new DateTime(2023, 9, 23, 19, 24, 9, 315, DateTimeKind.Local).AddTicks(1650));
 
                     b.Property<DateTime>("DogumTarihi")
                         .HasColumnType("datetime2");

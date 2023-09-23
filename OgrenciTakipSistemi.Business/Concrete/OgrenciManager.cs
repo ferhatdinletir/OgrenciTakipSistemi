@@ -14,8 +14,5 @@ namespace OgrenciTakipSistemi.Business.Concrete
 {
     public class OgrenciManager : BaseManager<Ogrenci>, IOgrenciManager
     {
-        public OgrenciManager(IBaseRepository<Ogrenci> repository) : base(repository)
-        {
-        }
     }
 }

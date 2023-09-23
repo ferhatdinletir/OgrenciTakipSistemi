@@ -11,8 +11,5 @@ namespace OgrenciTakipSistemi.Business.Concrete
 {
     public class DanismanManager : BaseManager<Danisman>, IDanismanManager
     {
-        public DanismanManager(IBaseRepository<Danisman> repository) : base(repository)
-        {
-        }
     }
 }

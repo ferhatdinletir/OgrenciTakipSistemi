@@ -1,5 +1,6 @@
 ﻿using OgrenciTakipSistemi.Business.Abstract;
 using OgrenciTakipSistemi.DAL.Abstract;
+using OgrenciTakipSistemi.DAL.Concrete;
 using OgrenciTakipSistemi.Entities.Abstract;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,10 @@ namespace OgrenciTakipSistemi.Business.Concrete
     {
         private readonly IBaseRepository<T> repository;
 
-        public BaseManager(IBaseRepository<T> repository)
+        public BaseManager()
         {
 
-            this.repository = repository;
+            this.repository = new BaseRepository<T>();
         }
 
         public virtual async Task<int> InsertAsync(T entity)

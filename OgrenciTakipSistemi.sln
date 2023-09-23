@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OgrenciTakipSistemi.Busines
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OgrenciTakipSistemi.DAL", "OgrenciTakipSistemi.DAL\OgrenciTakipSistemi.DAL.csproj", "{554884A1-6701-4611-8A45-0FCD78EED5A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OgrenciTakipSistemi.WebMVC", "OgrenciTakipSistemi.WebMVC\OgrenciTakipSistemi.WebMVC.csproj", "{AEA520C5-22CA-4404-9D03-34D10772BDE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OgrenciTakipSistemi.WebMVC", "OgrenciTakipSistemi.WebMVC\OgrenciTakipSistemi.WebMVC.csproj", "{AEA520C5-22CA-4404-9D03-34D10772BDE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

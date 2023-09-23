@@ -1,9 +1,9 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OgrenciTakipSistemi.DAL.Contexts;
-using OgrenciTakipSistemi.Entities.Authentication;
-using OgrenciTakipSistemi.WebMVC.AutoMapperProfile;
 using OgrenciTakipSistemi.WebUI.Extensions;
+using OgrenciTakipSistemi.WebMVC.AutoMapperProfile;
+using Microsoft.AspNetCore.Identity;
+using OgrenciTakipSistemi.Entities.Authentication;
 
 namespace OgrenciTakipSistemi.WebMVC
 {
@@ -39,7 +39,7 @@ namespace OgrenciTakipSistemi.WebMVC
                 .AddDefaultTokenProviders();
             #endregion
 
-            //builder.Services.AddOgrenciTakipSistemi();
+            builder.Services.OgrenciTakipSistemiService();
 
             #region AutoMapper
             builder.Services.AddAutoMapper(typeof(OgrenciTakipSistemiProfile));
