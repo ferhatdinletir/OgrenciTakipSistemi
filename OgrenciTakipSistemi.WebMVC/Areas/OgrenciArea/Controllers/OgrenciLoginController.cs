@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace OgrenciTakipSistemi.WebMVC.Controllers
+namespace OgrenciTakipSistemi.WebMVC.Areas.OgrenciArea.Controllers
 {
-    public class LoginController : Controller
+    public class OgrenciLoginController : Controller
     {
         public IActionResult Index()
         {

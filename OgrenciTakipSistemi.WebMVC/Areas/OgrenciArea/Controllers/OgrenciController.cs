@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace OgrenciTakipSistemi.WebMVC.Controllers
+namespace OgrenciTakipSistemi.WebMVC.Areas.OgrenciArea.Controllers
 {
     public class OgrenciController : Controller
     {
