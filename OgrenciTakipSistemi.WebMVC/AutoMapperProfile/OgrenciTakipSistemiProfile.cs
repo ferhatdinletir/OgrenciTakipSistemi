@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using OgrenciTakipSistemi.Entities.Authentication;
 using OgrenciTakipSistemi.Entities.Concrete;
-using OgrenciTakipSistemi.WebMVC.Areas.AdminArea.Models.DTOs;
+using OgrenciTakipSistemi.WebMVC.Models.DTOs;
 
 namespace OgrenciTakipSistemi.WebMVC.AutoMapperProfile
 {
@@ -9,9 +9,8 @@ namespace OgrenciTakipSistemi.WebMVC.AutoMapperProfile
     {
         public OgrenciTakipSistemiProfile()
         {
-            CreateMap<LoginDTO, Danisman>();
+            CreateMap<GirisDTO, AppUser>();
+            CreateMap<KayitDTO, AppUser>();
         }
-
-
     }
 }

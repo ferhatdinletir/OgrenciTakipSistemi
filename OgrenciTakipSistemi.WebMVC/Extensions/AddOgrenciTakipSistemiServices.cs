@@ -4,7 +4,7 @@ using OgrenciTakipSistemi.DAL.Abstract;
 using OgrenciTakipSistemi.DAL.Concrete;
 using NuGet.Protocol.Plugins;
 
-namespace OgrenciTakipSistemi.WebUI.Extensions
+namespace OgrenciTakipSistemi.WebMVC.Extensions
 {
     public static class AddOgrenciTakipSistemiServices
     {

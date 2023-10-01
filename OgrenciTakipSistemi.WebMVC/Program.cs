@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using OgrenciTakipSistemi.DAL.Contexts;
-using OgrenciTakipSistemi.WebUI.Extensions;
+using OgrenciTakipSistemi.WebMVC.Extensions;
 using OgrenciTakipSistemi.WebMVC.AutoMapperProfile;
 using Microsoft.AspNetCore.Identity;
 using OgrenciTakipSistemi.Entities.Authentication;

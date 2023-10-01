@@ -1,0 +1,106 @@
+﻿@model GirisDTO
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/LoginRegister/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginRegister/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginRegister/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/LoginRegister/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/LoginRegister/css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('~/LoginRegister/images/bg-01.jpg');">
+            <div class="wrap-login100 p-t-30 p-b-50">
+                <span class="login100-form-title p-b-41">
+                    User Login
+                </span>
+                
+                <form class="login100-form validate-form p-b-33 p-t-5" asp-action="Giris" asp-controller="Giris" method="post">
+                    <div asp-validation-summary="ModelOnly" class="d-flex justify-content-center text-danger"></div>
+                    <div class="wrap-input100 validate-input">
+                        <input asp-for="Email" class="input100" placeholder="Email">
+                        <span asp-validation-for="Email" class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <input asp-for="Password" class="input100" placeholder="Password">
+                        <span asp-validation-for="Password" class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn m-t-32">
+                        <button class="login100-form-btn" type="submit">
+                            Login
+                        </button>
+                    </div>
+
+                    <div class="container-login100-form-btn m-t-32">
+                        <button class="login100-form-btn">
+                            Forgot Password?
+                        </button>
+                    </div>
+                </form>
+                <br />
+                <form class="login100-form validate-form p-b-33 p-t-5" asp-action="Create" asp-controller="User">
+                    <div class="container-login100-form-btn m-t-32">
+                        Don't have an account?
+                    </div>
+                    <div class="container-login100-form-btn m-t-32">
+                        <button class="login100-form-btn">
+                            Sign In
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dropDownSelect1"></div>
+
+    <!--===============================================================================================-->
+    <script src="~/LoginRegister/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/LoginRegister/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/LoginRegister/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/LoginRegister/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/LoginRegister/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/LoginRegister/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/LoginRegister/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/LoginRegister/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/LoginRegister/js/main.js"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

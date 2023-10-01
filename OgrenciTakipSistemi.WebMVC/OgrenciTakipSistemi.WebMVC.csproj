@@ -31,9 +31,12 @@
 
   <ItemGroup>
     <Folder Include="Areas\AdminArea\Data\" />
+    <Folder Include="Areas\AdminArea\Models\" />
+    <Folder Include="Areas\DanismanArea\Controllers\" />
     <Folder Include="Areas\DanismanArea\Data\" />
     <Folder Include="Areas\DanismanArea\Models\" />
     <Folder Include="Areas\DanismanArea\Views\" />
+    <Folder Include="Areas\OgrenciArea\Controllers\" />
     <Folder Include="Areas\OgrenciArea\Data\" />
     <Folder Include="Areas\OgrenciArea\Models\" />
     <Folder Include="Areas\OgrenciArea\Views\" />
