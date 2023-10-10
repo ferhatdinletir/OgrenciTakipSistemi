@@ -1,106 +1,76 @@
 ﻿@model GirisDTO
 
 @{
-    Layout = null;
+	Layout = null;
 }
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <title>Login</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="~/LoginRegister/images/icons/favicon.ico" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/LoginRegister/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/LoginRegister/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/LoginRegister/vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/LoginRegister/css/util.css">
-    <link rel="stylesheet" type="text/css" href="~/LoginRegister/css/main.css">
-    <!--===============================================================================================-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link href="~/giris_assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="~/giris_assets/css/font-awesome.min.css" rel="stylesheet">
+	<link href="~/giris_assets/css/style.css" rel="stylesheet">
+
+	<title>Educational Bootstrap 5 Login Page Website Tampalte</title>
 </head>
 <body>
+	<section class="form-02-main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="_lk_de">
+						<div class="form-03-main">
+							<div asp-validation-summary="ModelOnly" class="d-flex justify-content-center text-danger"></div>
+							<form asp-area="Default" asp-controller="Giris" asp-action="Giris" method="post">
+								<div class="logo">
+									<img src="~/giris_assets/images/user.png">
+								</div>
+								<div class="form-group">
+									<input type="email" name="email" class="form-control _ge_de_ol" type="text" placeholder="Enter Email">
+								</div>
 
-    <div class="limiter">
-        <div class="container-login100" style="background-image: url('~/LoginRegister/images/bg-01.jpg');">
-            <div class="wrap-login100 p-t-30 p-b-50">
-                <span class="login100-form-title p-b-41">
-                    User Login
-                </span>
-                
-                <form class="login100-form validate-form p-b-33 p-t-5" asp-action="Giris" asp-controller="Giris" method="post">
-                    <div asp-validation-summary="ModelOnly" class="d-flex justify-content-center text-danger"></div>
-                    <div class="wrap-input100 validate-input">
-                        <input asp-for="Email" class="input100" placeholder="Email">
-                        <span asp-validation-for="Email" class="focus-input100" data-placeholder="&#xe80f;"></span>
-                    </div>
+								<div class="form-group">
+									<input type="password" name="password" class="form-control _ge_de_ol" type="text" placeholder="Enter Password">
+								</div>
 
-                    <div class="wrap-input100 validate-input">
-                        <input asp-for="Password" class="input100" placeholder="Password">
-                        <span asp-validation-for="Password" class="focus-input100" data-placeholder="&#xe80f;"></span>
-                    </div>
+								<div class="checkbox form-group">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="">
+										<label class="form-check-label" for="">
+											Remember me
+										</label>
+									</div>
+									<a href="#">Forgot Password</a>
+								</div>
 
-                    <div class="container-login100-form-btn m-t-32">
-                        <button class="login100-form-btn" type="submit">
-                            Login
-                        </button>
-                    </div>
-
-                    <div class="container-login100-form-btn m-t-32">
-                        <button class="login100-form-btn">
-                            Forgot Password?
-                        </button>
-                    </div>
-                </form>
-                <br />
-                <form class="login100-form validate-form p-b-33 p-t-5" asp-action="Create" asp-controller="User">
-                    <div class="container-login100-form-btn m-t-32">
-                        Don't have an account?
-                    </div>
-                    <div class="container-login100-form-btn m-t-32">
-                        <button class="login100-form-btn">
-                            Sign In
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="dropDownSelect1"></div>
-
-    <!--===============================================================================================-->
-    <script src="~/LoginRegister/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginRegister/vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginRegister/vendor/bootstrap/js/popper.js"></script>
-    <script src="~/LoginRegister/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginRegister/vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginRegister/vendor/daterangepicker/moment.min.js"></script>
-    <script src="~/LoginRegister/vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginRegister/vendor/countdowntime/countdowntime.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginRegister/js/main.js"></script>
-
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+								<div class="form-group">
+									<div>
+										<button class="_btn_04" type="submit">
+											Giriş
+										</button>
+									</div>
+								</div>
+							</form>
+							<div class="form-group nm_lk"><p>Hesabınız Yoksa Üye Olabilirsiniz</p></div>
+							<div class="form-group">
+								<div class="_btn_04">
+									<a href="#">Üye Ol</a>
+								</div>
+								<br />
+								<br />
+								<br />
+								<br />
+								<br />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
 </html>

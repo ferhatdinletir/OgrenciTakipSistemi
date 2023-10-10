@@ -47,15 +47,15 @@ namespace OgrenciTakipSistemi.WebMVC.Controllers
             {
                 if (role == "Admin")
                 {
-                    return RedirectToAction("Index", "Home", new { Area = "AdminArea" });
+                    return RedirectToAction("Index", "Home", new { Areas = "AdminArea" });
                 }
                 else if (role == "Danisman")
                 {
-                    return RedirectToAction("Index", "Home", new { Area = "DanismanArea" });
+                    return RedirectToAction("Index", "Home", new { Areas = "DanismanArea" });
                 }
                 else if (role == "Ogrenci")
                 {
-                    return RedirectToAction("Index", "Home", new { Area = "OgrenciArea" });
+                    return RedirectToAction("Index", "Home", new { Areas = "OgrenciArea" });
                 }
             }
             return View(girisDTO);
