@@ -21,6 +21,8 @@ namespace OgrenciTakipSistemi.WebMVC.Controllers
         {
             //AppUser admin = new AppUser { UserName = "Ferhat", Email = "ferhat@gmail.com", PhoneNumberConfirmed = true, TwoFactorEnabled = false, EmailConfirmed = true, AccessFailedCount = 0, LockoutEnabled = false };
             //var result = await userManager.CreateAsync(admin, "123");
+            //AppUser danisman = new AppUser { UserName = "Sabri", Email = "sabri@gmail.com", PhoneNumberConfirmed = true, TwoFactorEnabled = false, EmailConfirmed = true, AccessFailedCount = 0, LockoutEnabled = false };
+            //var result = await userManager.CreateAsync(danisman, "123");
             return View();
         }
 
