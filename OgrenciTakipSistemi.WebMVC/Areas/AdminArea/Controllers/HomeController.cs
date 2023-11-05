@@ -7,6 +7,7 @@ using System.Diagnostics;
 
 namespace OgrenciTakipSistemi.WebMVC.Areas.AdminArea.Controllers
 {
+
     [Area("AdminArea")]
     [Authorize(Roles = "Admin")]
     public class HomeController : Controller

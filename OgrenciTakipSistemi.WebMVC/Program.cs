@@ -20,6 +20,7 @@ namespace OgrenciTakipSistemi.WebMVC
             builder.Services.AddDbContext<SqlDbContext>(
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("OgrenciTakipSistemi")));
 
+
             #region Identity Configuration
             builder.Services.AddIdentity<AppUser, AppRole>(options =>
             {
@@ -40,6 +41,7 @@ namespace OgrenciTakipSistemi.WebMVC
             #endregion
 
             builder.Services.OgrenciTakipSistemiService();
+
 
             #region AutoMapper
             builder.Services.AddAutoMapper(typeof(OgrenciTakipSistemiProfile));
